@@ -1,7 +1,21 @@
-<header>
+<header id="header">
+	<div class="banner">
+		<!-- <img src="<%- theme.banner%>" alt=""> -->
+	</div>
 	<div class="header-container">
-		<a href="<%- url_for() %>" class="logo"></a>
-		<span><%- config.title%></span>
-		<p>Header</p>
+		<div class="logo-wrap">
+			
+		</div>
+		<div class="nav">
+			<nav class="main-nav">
+				<ul class="main-nav-ul">
+					<% for (var i in theme.menu){ %>
+					<li class="main-nav-li">
+						<a href="<%- url_for(theme.menu[i]) %>" class="main-nav-link"><%= i %></a>
+					</li>
+					<% } %>
+				</ul>
+			</nav>
+		</div>
 	</div>
 </header>
