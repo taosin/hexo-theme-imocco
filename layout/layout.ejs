@@ -4,12 +4,12 @@
 <body>
 	<% if(is_home()) { %>
 		<%- partial('home')%>
+		<%- partial('_partial/footer') %>
 	<% }else { %>
 	<%- partial('_partial/header')%>
 	<div className="container" id="container">
 		<%- body %>
 	</div>
 	<% } %>
-	<%- partial('_partial/footer') %>
 </body>
 </html>

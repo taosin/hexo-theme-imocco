@@ -1,7 +1,8 @@
 # Header
 menu:
   首页: /
-  博客: /archives
+  博客: /blogs
+  归档: /archives
   实验: /archives
   关于我: /about
   阅读轨迹: /readline
