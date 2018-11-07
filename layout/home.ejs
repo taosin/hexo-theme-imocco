@@ -1,0 +1,13 @@
+<main id="home">
+	<div class="home-nav">
+		<ul class="home-nav-ul">
+			<% for (var i in theme.menu){ %>
+			<li class="home-nav-ul-li">
+				<% if(i != '首页') { %>
+				<a href="<%- url_for(theme.menu[i]) %>" class="home-nav-ul-li-a"><%= i %></a>
+				<% } %>
+			</li>
+			<% } %>
+		</ul>
+	</div>
+</main>

@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<%- partial('_partial/head') %>
+<%- partial('_partial/head') %>
 <body>
-	<%- partial('_partial/header') %>
+	<% if(is_home()) { %>
+		<%- partial('home')%>
+	<% }else { %>
+	<%- partial('_partial/header')%>
 	<div className="container" id="container">
 		<%- body %>
 	</div>
+	<% } %>
 	<%- partial('_partial/footer') %>
 </body>
 </html>
