@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <%- partial('_partial/head') %>
+<!-- 引入Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<!-- 引入组件库 -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <body>
 	<% if(is_home()) { %>
-		<%- partial('home')%>
-		<%- partial('_partial/footer') %>
+	<%- partial('home')%>
+	<%- partial('_partial/footer') %>
 	<% }else { %>
 	<%- partial('_partial/header')%>
 	<div className="container" id="container">

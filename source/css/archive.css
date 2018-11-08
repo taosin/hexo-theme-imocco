@@ -2,69 +2,45 @@
 * @Author: iMocco
 * @Date:   2018-11-07 16:59:48
 * @Last Modified by:   iMocco
-* @Last Modified time: 2018-11-07 17:17:13
+* @Last Modified time: 2018-11-08 16:00:12
 */
 /* 归档archive */
 
+#archive{
+	margin-top: 40px;
+}
 .archive {
 	margin-bottom: 3rem;
 	margin-top: 4rem;
 	border: 1px solid transparent;
-	font-family: "Open Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft Yahei", "Microsoft Jhenghei", sans-serif;
+	font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
-
-.archive i {
-	color: red;
-	letter-spacing: 2px;
+.page-title{
+	/*font-size: 20px;*/
+}
+.blog-text-center{
 	text-align: center;
-	margin: 60px 0 60px 0;
+	margin-bottom: 30px;
 }
-
-.archive-year {
-	font-size: 24px;
-	text-align: center;
-	padding-top: 3rem;
-}
-
-.archive-month {
+.archive-year{
+	border-bottom: 1px solid #DCDFE6;
+	margin: 30px 0 10px 0;
+	padding-bottom: 15px;
 	font-size: 20px;
-	color: #aaa;
-	text-align: center;
+	font-weight: 400;
+	color: #303133;
 }
-
-.archive-item {
+.archive-page{
+	margin-bottom: 5px;
 	display: flex;
-	border-bottom: 1px dashed lightgray;
-	justify-content: space-between
+	justify-content: space-between;
+	padding: 5px 0;
+	font-size: 16px;
+	margin-left: 20px;
+	border-bottom: 1px dashed #fff;
+	color: #606266;
+	font-family: 'Kaiti', 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
-
-.archive-item:hover {
-	cursor: pointer;
-	font-weight: 500;
-	border-bottom: 1px solid #1abc9c;
-}
-
-.archive-post-title {
-	font-size: 1.4rem;
-	color: #333
-}
-
-.archive-post-time {
-	font-size: 1.2rem;
-	color: #333;
-	display: flex;
-	align-items: flex-end
-}
-
-@media(max-width:512px) {
-	.archive-post-time {
-		display: none
-	}
-	.archive-year {
-		text-align: left;
-	}
-}
-
-a{
-	color: #333;
-}
+.archive-page:hover{
+	border-bottom: 1px dashed #E4E7ED;
+}	

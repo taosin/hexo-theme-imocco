@@ -1,53 +1,63 @@
-<!-- content srart -->
-<link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css">
+<div id="archive">
+	<el-row :gutter="20" style="margin:0" type="flex" class="row-bg" justify="center">
+		<el-col :xs="22" :md="18" :sm="20" :lg="12" >
+			<div class="archive">
+				<div class="blog-text-center">
+					<% if(is_category()) { %>
+					<i class="el-icon-tickets"><%= page.category %></i>
+					<% } else if(is_tag()) { %>
+					<i class="el-icon-tickets"><%= page.tag %></i>
+					<% } else {%>
+					<i class="el-icon-tickets">OK!目前共计<%= site.posts.length %>篇博客。继续努力。✌️</i>
+					<% } %>
+				</div>  
+				<% var last_year; var last_month; %>
 
-<div class="am-g am-g-fixed blog-fixed blog-content">
-	<div class="am-u-md-8 am-u-sm-12">
-		<div class="archive">
-			<div class="blog-text-center">
-				<% if(is_category()) { %>
-				<i class="fa fa-book"><%= page.category %></i>
-				<% } else if(is_tag()) { %>
-				<i class="fa fa-book"><%= page.tag %></i>
-				<% } else {%>
-				<i class="fa fa-book">总计<%= site.posts.length %>篇文章</i>
+				<% page.posts.each(function(post, i){ %>				
+				<% var year = post.date.year(); %>
+				<% var month = post.date.format('MM'); %>
+				<% if (last_year != year){ %>
+				<% if (last_year != null){ %>
+				<% last_month = null; %>
 				<% } %>
-			</div>  
 
-			<% var last_year; var last_month; %>
+				<% last_year = year; %>
+				<!--<a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>-->
+				<% } %>
 
-			<% page.posts.each(function(post, i){ %>				
-			<% var year = post.date.year(); %>
-			<% var month = post.date.format('MM'); %>
-			<% if (last_year != year){ %>
-			<% if (last_year != null){ %>
-			<% last_month = null; %>
-			<% } %>
+				<% if (!last_month || last_month != month) {%>
+				<% last_month = month; %>  
+				<div class="archive-year">
+					<div class="page-title">
+						<i class="el-icon-time"></i>
+						<a href="<%- url_for(config.archive_dir + '/' + year + '/' + month) %>" class="page-title-link">
+							<%= year %>-<%=  month %>
+						</a>
+					</div>		
+				</div>	
+				<% } %>  
+				<div class="archive-page">
+					<div class="page-title">
+						<a href="<%- url_for(post.path) %>" itemprop="url" class="page-title-link"><%= post.title %></a>
+					</div>
+					<div class="page-date">
+						<a href="<%- url_for(post.path) %>" itemprop="url" class="page-title-link"><%= post.date.format('MM-DD') %></a>
+					</div>
+				</div>		        							
+				<% }) %>
 
-			<% last_year = year; %>
-			<!--<a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a>-->
-			<% } %>
-
-			<% if (!last_month || last_month != month) {%>
-			<% last_month = month; %>  
-			<div class="archive-year">
-				<a href="<%- url_for(config.archive_dir + '/' + year + '/' + month) %>">
-					<%= year %>-<%=  month %>
-				</a>
-			</div>				
-			<% } %>  
-
-			<div class="archive-item">
-				<div class="archive-post-title">									
-					<a href="<%- url_for(post.path) %>" itemprop="url"><%= post.title %></a>
-				</div>
-				<div class="archive-post-time">
-					<a href="<%- url_for(post.path) %>" itemprop="url"><%= post.date.format('MM-DD') %></a>
-				</div>
-			</div>		        							
-			<% }) %>
-
-			<%- partial('paginator') %>
-		</div>
-	</div>
+				<%- partial('_partial/paginator') %>
+			</div>
+		</el-col>
+	</el-row>
 </div>
+<script>
+	new Vue({
+		el:'#archive',
+		data(){
+			return {
+				title:'submit'
+			}
+		}
+	})
+</script>
