@@ -1,14 +1,9 @@
-<main id="blog">
-	<div>
-		{{title}}
+<main id="index">
+	<div class="posts-list">
+		<% page.posts.forEach(post => {%>
+		<section>
+			<%- partial('article', {post:post}) %>
+		</section>
+		<%})%>
 	</div>
 </main>
-<script>
-	new Vue({
-		data(){
-			return {
-				title: '标题'
-			}
-		}
-	})
-</script>
