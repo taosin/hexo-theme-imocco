@@ -1,31 +1,15 @@
-<div>
-	<% if (page.total > 1){ %>
-	<ul class="am-pagination">
-		<% if (page.prev) { %>
-		<li class="am-pagination-prev">
-			<a href="<%- url_for(page.prev_link) %>">&laquo; <%= __('prev') %> </a>
-		</li>
-		<% } %>
-		<% if (page.next) { %>
-		<li class="am-pagination-next">
-			<a href="<%- url_for(page.next_link) %>"> <%= __('next') %> &raquo; </a>
-		</li>
-		<% } %>
-	</ul>
-	<% } %>
-	<div class="el-pagination is-background">
-		<%=site.pages%>
-		<ul class="el-pager">
-			<% for(var i = 1; i < page.total + 1; i++){ %>
-			<li class="number" :class="<%= page.current %> == <%= i%> ?'active':''">
-				<a v-if="<%= page.current %> == <%= i%>">
-					<%= i%>
-				</a>
-				<a v-else href="<%- url_for(page.next_link) %>">
-					<%= i%>
-				</a>
-			</li>
-			<% } %>
-		</ul>
-	</div>
-</div>
+<nav aria-label="Page navigation">
+    <ul class="pagination">
+        <% if (page.prev) { %>
+        <li class="page-item"><a class="page-link" href="<%- url_for(page.prev_link) %>">Prev</a></li>
+        <% } %>
+        <% for(var i = 1; i < page.total + 1; i++){ %>
+        <li class="page-item <%= page.current == i ? 'active':''%>">
+            <a class="page-link"><%= i%></a>
+        </li>
+        <% } %>
+        <% if (page.next) { %>
+        <li class="page-item"><a class="page-link" href="<%- url_for(page.next_link) %>">Next</a></li>
+        <% } %>
+    </ul>
+</nav>
