@@ -1,0 +1,27 @@
+/*
+* @Author: iMocco
+* @Date:   2018-11-12 15:02:57
+* @Last Modified by:   iMocco
+* @Last Modified time: 2018-11-12 17:53:10
+*/
+.article{
+	border: 1px solid #ddd;
+	margin: 5px;
+}
+.article-img{
+	width: 100%;
+}
+.article-date{
+	background: #dee3e7;
+}
+.article-main{
+	position: relative;
+	width: 100%;
+	text-align: center;
+}
+
+@media screen and (min-width: 1025px){
+	.article {
+		width: 23.5%;
+	}
+}

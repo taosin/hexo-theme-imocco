@@ -1,0 +1,18 @@
+/*
+* @Author: iMocco
+* @Date:   2018-11-12 14:40:39
+* @Last Modified by:   iMocco
+* @Last Modified time: 2018-11-12 17:28:55
+*/
+.blogs{
+	margin-top: 3.25rem;
+	width: 100%;
+	height: 100%;
+	background: #f9f9f9;
+	padding-top: 2rem;
+	overflow-x: hidden;
+}
+.blog-main{
+	display: -webkit-flex; /* Safari */
+	display: flex;
+}

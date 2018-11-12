@@ -1,0 +1,24 @@
+<div class="article-main">
+	<div class="js-masonry" data-masonry-options='{ "itemSelector": ".article", "columnWidth": 5 }'>
+		<% posts.each(function(post) { %>
+		<div class="article">
+			<div class="article-bg">
+				<img class="article-img" src="http://static.bh-lay.com/blog/2018-iflytek-shushan/topic-graphy.jpg?imageView2/2/w/420/q/85" alt="">
+			</div>
+			<div class="article-title">
+				<%- post.title%>
+			</div>
+			<div class="article-content">
+
+			</div>
+			<p>	
+				<%-post.excerpt %>
+			</p>
+			<div class="article-date">
+				<% var date = post.date.format('YYYY-MM-DD'); %>
+				<%- date%>
+			</div>
+		</div>
+		<% })%>
+	</div>
+</div>
