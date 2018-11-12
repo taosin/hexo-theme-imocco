@@ -2,7 +2,7 @@
 * @Author: iMocco
 * @Date:   2018-11-12 15:02:57
 * @Last Modified by:   iMocco
-* @Last Modified time: 2018-11-12 17:53:10
+* @Last Modified time: 2018-11-12 19:31:04
 */
 .article{
 	border: 1px solid #ddd;
@@ -20,8 +20,30 @@
 	text-align: center;
 }
 
-@media screen and (min-width: 1025px){
+
+.js-masonry{
+	background: red;
+}
+
+@media screen and (min-width: 576px){
+	.article {
+		width: 90%;
+	}
+}
+
+@media screen and (min-width: 768px){
+	.article {
+		width: 48%;
+	}
+}
+@media screen and (min-width: 992px){
+	.article {
+		width: 31.5%;
+	}
+}
+@media screen and (min-width: 1200px){
 	.article {
 		width: 23.5%;
+		margin: 0.75%;
 	}
 }
