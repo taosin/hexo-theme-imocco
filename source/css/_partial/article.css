@@ -2,48 +2,76 @@
 * @Author: iMocco
 * @Date:   2018-11-12 15:02:57
 * @Last Modified by:   iMocco
-* @Last Modified time: 2018-11-12 19:31:04
+* @Last Modified time: 2018-11-13 14:22:44
 */
 .article{
-	border: 1px solid #ddd;
-	margin: 5px;
+	margin:12px 0;
+	width: 280px;
+	background: #fff;
+	transition: box-shadow .3s ease-out;
+	transition-delay: .1s;
+	cursor: pointer;
+}
+.article:hover {
+    box-shadow: 5px 10px 10px -5px rgba(0,0,0,.2);
 }
 .article-img{
 	width: 100%;
 }
-.article-date{
-	background: #dee3e7;
+.article-footer{
+	display: table;
+	width: 100%;
+	padding: 10px 0;
+	border-top: 1px solid #e8e8e8;
+	background: #fbfbfb;
 }
 .article-main{
 	position: relative;
 	width: 100%;
 	text-align: center;
 }
+.article-title{
+	text-align: center;
+}
 
-
+.article-title-a{
+	display: block;
+	padding: 1em .5em .2em;
+	font-weight: 400;
+	line-height: 1.5em;
+	text-align: center;
+	font-size: 18px;
+	color: #000;
+	outline: none
+}
 .js-masonry{
-	background: red;
+	width: 100%;
 }
 
-@media screen and (min-width: 576px){
-	.article {
-		width: 90%;
+@media screen and (min-width: 320px){
+	.blog-main{
+		width: 320px;
 	}
 }
 
-@media screen and (min-width: 768px){
-	.article {
-		width: 48%;
+@media screen and (min-width: 620px){
+	.blog-main{
+		width: 620px;
 	}
 }
-@media screen and (min-width: 992px){
-	.article {
-		width: 31.5%;
+
+@media screen and (min-width: 920px){
+	.blog-main{
+		width: 920px;
 	}
 }
-@media screen and (min-width: 1200px){
-	.article {
-		width: 23.5%;
-		margin: 0.75%;
+@media screen and (min-width: 1220px){
+	.blog-main{
+		width: 1220px;
+	}
+}
+@media screen and (min-width: 1520px){
+	.blog-main{
+		width: 1520px;
 	}
 }
