@@ -1,7 +1,11 @@
 <main class="blogs">
 	<div class="row justify-content-center">
-		<div class="blog-main" id="waterfall">
-			<%- partial('_partial/article') %>
+		<div class="blog-bg">
+			<!-- <%- partial('_partial/categories', {categories: site.categories}) %> -->
+			<%- partial('_partial/tag', {tags: site.tags}) %>
+		</div>
+		<div class="blog-main">
+			<%- partial('_partial/article', {posts: site.posts}) %>
 		</div>
 	</div>
 </main>

@@ -1,6 +1,5 @@
 <div class="js-masonry" data-masonry-options='{ "itemSelector": ".card", "columnWidth": 30 }'>
-
-	<% site.posts.sort('date').reverse().each(function(post) { %>
+	<% posts.sort('date').reverse().each(function(post) { %>
 	<div class="card">
 		<% if(post.photos && post.photos.length){%>
 		<img class="card-img-top" src="<%=post.photos%>?imageView2/2/w/280/q/85" alt="">
@@ -11,21 +10,21 @@
 					<%- post.title%>
 				</a>
 			</h5>
-			<h6 class="card-subtitle mb-2 text-muted">
-				分类、标签
-			</h6>
 			<div class="card-text">
 				<p>
 					<%- post.external%>
 				</p>
 			</div>
 		</div>
+		<!-- <button type="button" class="btn btn-warning btn-sm">继续阅读</button> -->
 		<div class="card-footer d-flex justify-content-around align-items-center">
+			<h6 class="card-subtitle mb-2 text-muted">
+				<%- partial('_partial/tag', {tags: post.tags}) %>
+			</h6>
 			<small class="text-muted">
 				<% var date = post.date.format('YYYY-MM-DD'); %>
 				<%- date%>
 			</small>
-			<button type="button" class="btn btn-warning btn-sm">继续阅读</button>
 		</div>
 		<!-- <div class="article-title">
 		</div>

@@ -1,0 +1,3 @@
+<% tags.forEach(tag => { %>
+  <a href="<%- url_for('/tags/' + tag.name) %>" class='badge badge-primary'><%= tag.name %></a>
+<% }) %>
