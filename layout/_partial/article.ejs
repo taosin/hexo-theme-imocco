@@ -1,25 +1,43 @@
-<div class="js-masonry" data-masonry-options='{ "itemSelector": ".article", "columnWidth": 30 }'>
+<div class="js-masonry" data-masonry-options='{ "itemSelector": ".card", "columnWidth": 30 }'>
 
 	<% site.posts.sort('date').reverse().each(function(post) { %>
-	<div class="article">
-		<div class="article-bg">
-			<% if(post.photos && post.photos.length){%>
-			<img class="article-img" src="<%=post.photos%>?imageView2/2/w/280/q/85" alt="">
-			<% }%>
+	<div class="card">
+		<% if(post.photos && post.photos.length){%>
+		<img class="card-img-top" src="<%=post.photos%>?imageView2/2/w/280/q/85" alt="">
+		<% }%>
+		<div class="card-body">
+			<h5 class="card-title">
+				<a href="" class="article-title-a">
+					<%- post.title%>
+				</a>
+			</h5>
+			<h6 class="card-subtitle mb-2 text-muted">
+				分类、标签
+			</h6>
+			<div class="card-text">
+				<p>
+					<%- post.external%>
+				</p>
+			</div>
 		</div>
-		<div class="article-title">
-			<a href="" class="article-title-a">
-				<%- post.title%>
-			</a>
+		<div class="card-footer d-flex justify-content-around align-items-center">
+			<small class="text-muted">
+				<% var date = post.date.format('YYYY-MM-DD'); %>
+				<%- date%>
+			</small>
+			<button type="button" class="btn btn-warning btn-sm">继续阅读</button>
 		</div>
-		<div class="article-content">
-			<%- post.external%>
+		<!-- <div class="article-title">
 		</div>
-		</p>
-		<div class="article-footer">
+		<div class="article-external">
+		</div>
+	</p>
+	<div class="article-footer">
+		<span class="article-date">
 			<% var date = post.date.format('YYYY-MM-DD'); %>
 			<%- date%>
-		</div>
-	</div>
-	<% })%>
+		</span>
+	</div> -->
+</div>
+<% })%>
 </div>

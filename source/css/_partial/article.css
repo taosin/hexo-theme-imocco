@@ -2,18 +2,20 @@
 * @Author: iMocco
 * @Date:   2018-11-12 15:02:57
 * @Last Modified by:   iMocco
-* @Last Modified time: 2018-11-13 14:22:44
+* @Last Modified time: 2018-11-13 16:17:43
 */
-.article{
+.card{
 	margin:12px 0;
 	width: 280px;
 	background: #fff;
-	transition: box-shadow .3s ease-out;
+	transition: all .3s ease-out;
 	transition-delay: .1s;
 	cursor: pointer;
 }
-.article:hover {
-    box-shadow: 5px 10px 10px -5px rgba(0,0,0,.2);
+.card:hover {
+	box-shadow: 5px 10px 10px -5px rgba(0,0,0,.2);
+	margin-top: 10px;
+	margin-left: -2px;
 }
 .article-img{
 	width: 100%;
@@ -21,7 +23,7 @@
 .article-footer{
 	display: table;
 	width: 100%;
-	padding: 10px 0;
+	padding: 10px 15px;
 	border-top: 1px solid #e8e8e8;
 	background: #fbfbfb;
 }
@@ -33,7 +35,8 @@
 .article-title{
 	text-align: center;
 }
-
+.article-date{
+}
 .article-title-a{
 	display: block;
 	padding: 1em .5em .2em;
@@ -44,6 +47,14 @@
 	color: #000;
 	outline: none
 }
+
+.card-text{
+	line-height: 1.4;
+	font-size: 13px;
+	color: #888;
+	text-indent: 2em;
+}
+
 .js-masonry{
 	width: 100%;
 }
