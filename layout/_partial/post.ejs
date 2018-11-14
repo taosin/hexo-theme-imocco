@@ -1,0 +1,23 @@
+<div class="post col-xl-8 col-lg-10 col-md-11 col-sm-11">
+  <div class="card">
+    <img class="card-img-top" src="<%=page.photos%>?imageView2/2/q/85" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title"><%=page.title%></h5>
+      <p class="card-text">
+        <%-page.content%>
+      </p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+      <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev.path) %>">
+        上一篇：<%=page.prev.title%>
+      </a>
+      <% } %>
+      <% if (page.next) { %>
+      <a href="<%- url_for(page.next.path) %>" class="btn btn-link">
+        下一篇：<%=page.next.title%>
+      </a>
+      <% } %>
+    </div>
+  </div>
+</div>

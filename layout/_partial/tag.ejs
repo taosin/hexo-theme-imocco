@@ -1,4 +1,4 @@
 <% var classes=['primary','secondary','success','danger','warning','info','light','dark']; %>
 <% tags.forEach((tag,i) => { %>
-	<a href="<%- url_for('/tags/' + tag.name) %>" class='badge badge-<%= classes[i%8] %>'><%= tag.name %></a>
+	<a href="<%- url_for('/tags/' + tag.name) %>" class='badge badge-pill badge-<%= classes[i%8] %>'><%= tag.name %></a>
 <% }) %>

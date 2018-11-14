@@ -1,12 +1,12 @@
 <div class="js-masonry" data-masonry-options='{ "itemSelector": ".card", "columnWidth": 30 }'>
 	<% posts.sort('date').reverse().each(function(post) { %>
-	<div class="card">
+	<div class="card article">
 		<% if(post.photos && post.photos.length){%>
 		<img class="card-img-top" src="<%=post.photos%>?imageView2/2/w/280/q/85" alt="">
 		<% }%>
 		<div class="card-body">
 			<h5 class="card-title">
-				<a href="" class="article-title-a">
+				<a href="<%- config.root %><%- post.path %>" class="article-title-a">
 					<%- post.title%>
 				</a>
 			</h5>

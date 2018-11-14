@@ -1,11 +1,14 @@
-<main class="blogs">
+<main class="blogs" id="blog">
 	<div class="row justify-content-center">
+		<% if(is_post()) { %>
+			<%- partial('_partial/post') %>
+		<% }else {%>
 		<div class="blog-bg">
-			<!-- <%- partial('_partial/categories', {categories: site.categories}) %> -->
 			<%- partial('_partial/tag', {tags: site.tags}) %>
 		</div>
 		<div class="blog-main">
 			<%- partial('_partial/article', {posts: site.posts}) %>
 		</div>
+		<% }%>
 	</div>
 </main>
